@@ -42,6 +42,8 @@ def list_images():
 
     dir = base_path + '*.jpg'
 
+    images = glob(dir)
+
     return images
 
 
