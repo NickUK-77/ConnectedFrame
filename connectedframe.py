@@ -33,7 +33,7 @@ def resize_images():
 
 	for file in images:
 		img = Image.open(file)
-		img = img.resize((640, 480), Image.ANTIALIAS)
+		img = img.resize((720, 480), Image.ANTIALIAS)
 		img.save(file, "JPEG")
 
 def list_images():
@@ -129,9 +129,9 @@ root.config(cursor='none')
 
 initialize()
 
-left_column = Frame(root, bg='black', width=80, height=480)
-center_column = Frame(root, bg='black', width=640, height=480)
-right_column = Frame(root, bg='black', width=80, height=480)
+left_column = Frame(root, bg='black', width=40, height=480)
+center_column = Frame(root, bg='black', width=720, height=480)
+right_column = Frame(root, bg='black', width=40, height=480)
 
 left_column.pack_propagate(0)
 center_column.pack_propagate(0)
