@@ -12,7 +12,7 @@ carousel_interval = int(getenv("CAROUSEL_INTERVAL_SECONDS")) * 1000
 frame_owner = getenv("FRAME_OWNER")
 ifttt_key = getenv("IFTTT_KEY")
 
-base_path = "/usr/src/app/images/*."
+base_path = "/usr/src/app/images/"
 carrousel_status = True
 image_index = 0
 image_list = []
@@ -40,14 +40,12 @@ def resize_images():
 def list_images():
     images = []
 
-    dir = base_path
-    ext = ["gif", "png", "jpg", "jpeg", "JPG"]
+    dir = base_path + "*.jpg"
 
-    for extensions in ext:
-        images.extend(glob(dir + extensions))
+    images = glob(dir)
 
-    for file in images:
-        return images
+    return images
+    
 
 def previous_image():
 	global image_index
