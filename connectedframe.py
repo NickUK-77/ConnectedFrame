@@ -4,6 +4,7 @@ from Tkinter import *
 from os import putenv, getenv, system
 from PIL import Image, ImageTk 
 from glob import glob
+from os.path import join
 
 dropbox_link = getenv("DROPBOX_LINK")
 download_interval = int(getenv("DOWNLOAD_INTERVAL_HOURS")) * 60 * 60 * 1000
@@ -37,13 +38,12 @@ def resize_images():
 		img.save(file, "JPEG")
 
 def list_images():
-	images = []
+    images = []
 
-	dir = base_path + "*.jpg"
+    dir = base_path + '*.jpg'
 
-	images = glob(dir)
+    return images
 
-	return images
 
 def previous_image():
 	global image_index
